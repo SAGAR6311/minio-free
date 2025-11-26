@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: minio
+    env: docker
+    plan: free
+    autoDeploy: true
+    disk:
+      name: data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: MINIO_ROOT_USER
+        value: admin
+      - key: MINIO_ROOT_PASSWORD
+        value: strongpassword
